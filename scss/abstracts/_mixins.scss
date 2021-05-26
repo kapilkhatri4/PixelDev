@@ -1,0 +1,85 @@
+@use 'breakpoints' as *;
+@use 'colors' as  *;
+
+@mixin mq($key) {
+  $size: map-get($breakpoints, $key);
+
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
+@mixin transition {
+  transition: all 0.3s ease;
+}
+@mixin flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flex-align($value) {
+  -webkit-box-align: $value;
+  -moz-box-align: $value;
+  -ms-flex-align: $value;
+  align-items: $value;
+}
+
+@mixin grid {
+  display: -ms-grid;
+  display: grid;
+}
+@mixin grid-temp-column($size, $width) {
+  grid-template-columns: repeat($size, $width);
+  -ms-grid-columns: repeat($size, $width);
+}
+@mixin grid-temp-row($size, $width) {
+  grid-template-rows: repeat($size, $width);
+  -ms-grid-row: repeat($size, $width);
+}
+.btn {
+  width: 200px;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background: $main-color1;
+  color: $white;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  border: 2px solid $main-color1;
+  @include transition;
+  &:hover {
+    background: transparent;
+    border: 2px solid $main-color1;
+    color: $main-color1;
+  }
+}
+
+.main-heading {
+  text-align: center;
+  .heading-text {
+    font-size: 35px;
+    font-weight: bold;
+    color: $main-color1;
+    position: relative;
+    span {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      border-radius: 100%;
+      margin-right: 5px;
+      background: linear-gradient(90deg, $main-color1, $main-color2);
+    }
+    p {
+      font-size: 16px;
+      font-weight: normal;
+      color: $black;
+      margin-top: 25px;
+    }
+  }
+}
+.p-150 {
+  padding-top: 200px;
+}
+.p-75 {
+  padding-top: 100px;
+}

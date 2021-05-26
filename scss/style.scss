@@ -1,0 +1,121 @@
+@use 'abstracts' as *;
+@use 'base' as *;
+@use 'header';
+@use 'services';
+@use 'portfolio';
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+footer {
+  background-image: linear-gradient(to left, $main-color1, $main-color2);
+  clip-path: polygon(0 20%, 0% 100%, 100% 100%, 100% 0%);
+  padding-bottom: 50px;
+  .logo-info {
+    margin-bottom: 50px;
+
+    .navbar-brand {
+      color: $white;
+      font-weight: bold;
+      margin-top: 30px !important;
+    }
+    p {
+      margin-top: 30px !important;
+      color: $white;
+    }
+  }
+
+  .imp-link,
+  .support-link {
+    margin-bottom: 50px;
+    @include flex;
+    flex-direction: column;
+    h3 {
+      color: $white;
+      margin-bottom: 30px;
+    }
+    a {
+      color: $white;
+      font-size: 20px;
+      &:hover {
+        color: $white;
+        text-decoration: underline;
+      }
+    }
+  }
+  .copyright {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid $white;
+    padding: 10px 0;
+  }
+}
+.slick-arrow {
+  &::before {
+    color: $main-color1;
+  }
+}
+.slide-in {
+  transform: scale(0.5);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+.sec-active {
+  transform: scale(1) !important;
+  opacity: 1;
+  transition: all 0.8s ease;
+}
+
+.preload-wrap {
+  position: fixed;
+  z-index: 1999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $main-color2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .first-cri {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background: $main-color1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pre-load 1s ease infinite;
+    .second-cri {
+      width: 200px;
+      height: 200px;
+      background: $main-color2;
+      border-radius: 100%;
+      animation: pre-load 1s ease 0.2s infinite;
+      .third-cri {
+        width: 100px;
+        height: 100px;
+        background: $main-color1;
+        border-radius: 100%;
+        animation: pre-load 1s ease 0.4s infinite;
+      }
+    }
+  }
+}
+@keyframes pre-load {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+.loaded .preload-wrap {
+  opacity: 0;
+  display: none;
+}

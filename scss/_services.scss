@@ -1,0 +1,132 @@
+@use 'abstracts' as *;
+@use 'base' as *;
+
+.service-box {
+  border: 1px solid #ccc;
+  margin: 15px 0px;
+  border-radius: 0px 0px 20px 20px;
+  @include transition;
+  .service-img {
+    width: 100%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 200px;
+      transition: all 0.3s ease;
+      object-fit: cover;
+    }
+  }
+  .service-info {
+    padding: 30px 10px;
+    .icon-img {
+      img {
+        width: 50px;
+      }
+    }
+  }
+  .service-read-more {
+    .service-box-head {
+      font-size: 25px;
+      color: $main-color1;
+      font-weight: bold;
+    }
+  }
+  &:hover {
+    box-shadow: 1px 5px 10px #ccc;
+    .service-img {
+      img {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.technologies {
+  .nav-link {
+    font-size: 20px;
+    color: #ccc;
+  }
+  .active {
+    background: transparent !important;
+    color: $main-color1 !important;
+    font-size: 30px !important;
+    font-weight: bold;
+  }
+  .categories {
+    h4 {
+      font-size: 25px;
+      font-weight: 400;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      color: $black;
+    }
+    .tech-icon {
+      text-align: center;
+      @include flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      img {
+        margin: 0 40px 20px 0px;
+        cursor: pointer;
+      }
+    }
+  }
+  .techimg {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+// clone
+.clone {
+  margin-bottom: 200px;
+  .clone-1 {
+    position: relative;
+    overflow: hidden;
+    .clone-info {
+      img {
+        margin: auto;
+      }
+    }
+    .clone-more {
+      img {
+        margin-bottom: 30px;
+      }
+    }
+    .custum-shape {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: #032fb246;
+      top: 0;
+      border-radius: 100%;
+      z-index: -1;
+      &:nth-child(2) {
+        position: absolute;
+        top: -100px;
+        left: -20px;
+      }
+      &:nth-child(3) {
+        position: absolute;
+        top: -50px;
+        left: -110px;
+      }
+      &:nth-child(4) {
+        position: absolute;
+        top: 65%;
+        right: -100px;
+      }
+      &:nth-child(5) {
+        position: absolute;
+        top: 80%;
+        right: -50px;
+      }
+    }
+  }
+  .slick-current {
+    box-shadow: none;
+  }
+}

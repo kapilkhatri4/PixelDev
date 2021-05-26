@@ -1,0 +1,113 @@
+@use 'abstracts' as *;
+@use 'base' as *;
+
+.portfolio {
+  padding: 100px 0px;
+  background: linear-gradient(-45deg, $main-color1, $main-color2);
+  .main-heading .heading-text {
+    color: $white;
+    p {
+      color: $white;
+    }
+  }
+  .icons {
+    @include grid;
+    @include grid-temp-column(5, 1fr);
+    grid-gap: 2rem;
+    // flex-wrap: nowrap;
+    img {
+      max-width: 100px;
+    }
+    .serve {
+      @include flex;
+      flex-direction: column;
+      align-items: center;
+
+      h4 {
+        color: $white;
+        margin-top: 20px;
+      }
+    }
+  }
+  @include mq(large) {
+    .icons {
+      @include grid-temp-column(3, 1fr);
+    }
+  }
+}
+
+.testimonial {
+  .test-card {
+    width: 250px;
+    height: auto;
+    padding: 20px 20px 50px 20px;
+    position: relative;
+    background: linear-gradient(to bottom, $main-color1, $main-color2);
+    border-radius: 20px;
+    margin-bottom: 100px;
+    transform: scale(0.7);
+    opacity: 0.5;
+    transition: all 0.5s ease;
+    p {
+      font-size: 18px;
+      color: $white;
+      margin-bottom: 20px;
+    }
+    h3 {
+      color: $white;
+      font-weight: bold;
+    }
+    i {
+      color: rgb(223, 189, 0);
+    }
+    img {
+      width: 100px;
+      height: auto;
+      border-radius: 100%;
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+.slick-current {
+  transform: scale(1) !important;
+  opacity: 1 !important;
+  box-shadow: 0px 10px 20px -10px rgb(63, 63, 63);
+  z-index: 11;
+  transition: all 0.5s ease;
+}
+
+.contact {
+  .contact-img {
+    @include flex;
+    @include flex-align(center);
+    img {
+      margin: auto;
+    }
+  }
+  .form-group {
+    label {
+      font-size: 20px;
+      i {
+        background: $main-color1;
+        padding: 10px;
+        color: $white;
+      }
+      span {
+        color: $main-color1;
+        font-weight: bold;
+      }
+    }
+    input {
+      margin: 10px 0px;
+      display: inline-block;
+    }
+    input[type='text'],
+    [type='number'] {
+      width: 49.5%;
+      display: inline-block;
+    }
+  }
+}

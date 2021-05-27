@@ -42,7 +42,7 @@ nav {
       @include flex;
       align-items: center;
       justify-content: center;
-      background: $main-color1 url('../background/bg.png') center;
+      background: $main-color1 url('../img/background/bg.png') center;
       background-size: cover;
       width: 100%;
       background-color: #032fb2;
@@ -107,7 +107,7 @@ nav {
     }
   }
   .wrapper {
-    background-image: url(../background/bg.png);
+    background-image: url(../img/background/bg.png);
     background-size: cover;
     height: 100%;
     z-index: 10 !important;

@@ -16,7 +16,7 @@
     grid-gap: 2rem;
     // flex-wrap: nowrap;
     img {
-      max-width: 100px;
+      max-width: 80px;
     }
     .serve {
       @include flex;
@@ -31,7 +31,7 @@
   }
   @include mq(large) {
     .icons {
-      @include grid-temp-column(3, 1fr);
+      @include grid-temp-column(2, 1fr);
     }
   }
 }
